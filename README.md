@@ -54,13 +54,13 @@ Buka browser dan akses:
 http://localhost/uts-pemrograman-web-2-60324028/
 
 ### Struktur Folder
-/config
-  database.php
-database_export.sql
-index.php
-create.php
-delete.php
-edit.php
+- config/
+  - database.php
+- database_export.sql
+- index.php
+- create.php
+- delete.php
+- edit.php
 
 ### Link Repository
 https://github.com/arumrahma24028/uts-pemrograman-web-2-60324028.git
