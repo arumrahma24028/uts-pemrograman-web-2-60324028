@@ -55,7 +55,7 @@ http://localhost/uts-pemrograman-web-2-60324028/
 
 ### Struktur Folder
 /config
-  └── database.php
+  database.php
 database_export.sql
 index.php
 create.php
