@@ -52,14 +52,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // ===== VALIDASI =====
 
-    // kode
+    // Kode kategori
     if (empty($kode)) {
-        $errors[] = "Kode wajib diisi";
-    } elseif (!preg_match('/^KAT-.{0,6}$/', $kode)) {
-        $errors[] = "Kode harus diawali 'KAT-' dan total 4-10 karakter";
+        $errors[] = "Kode kategori wajib diisi";
+    } elseif (strlen($kode) < 4 || strlen($kode) > 10) {
+        $errors[] = "Kode kategori harus 4-10 karakter";
+    } elseif (strpos($kode, 'KAT-') !== 0) {
+        $errors[] = "Kode harus diawali dengan 'KAT-'";
     }
 
-    // nama
+    // Nama Kategori
     if (empty($nama)) {
         $errors[] = "Nama wajib diisi";
     } else {
@@ -71,12 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // deskripsi
+    // Deskripsi
     if (!empty($deskripsi) && strlen($deskripsi) > 200) {
         $errors[] = "Deskripsi maksimal 200 karakter";
     }
 
-    // status
+    // Status
     if (!in_array($status, ['Aktif', 'Nonaktif'])) {
         $errors[] = "Status tidak valid";
     }
